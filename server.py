@@ -1,4 +1,3 @@
-# google_search_server.py
 import httpx
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -21,7 +20,7 @@ settings = SearchSettings() # type: ignore
 
 # --- MCP Server Setup ---
 mcp = FastMCP(
-    name="Google Search Tool (Manual URL)",
+    name="Google Search Tool",
     instructions="Provides a tool to search the web using Google.",
     dependencies=["httpx", "pydantic-settings", "python-dotenv"] # Added python-dotenv
 )
