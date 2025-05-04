@@ -1,7 +1,13 @@
+# Advanced Web Search MCP
+
+A powerful web search and content extraction tool that provides comprehensive, real-time results using Google's search engine. Returns relevant web content with customizable parameters for result count, content type, time range, and domain filtering. Ideal for gathering current information, news, and detailed web content analysis.
+
+## Configuration
+
 ```json
 {
   "mcpServers": {
-    "Google Search Tool": {
+    "FindIt": {
       "command": "uv",
       "args": [
         "run",
@@ -13,9 +19,11 @@
         "pydantic-settings",
         "--with",
         "python-dotenv",
+        "--with",
+        "beautifulsoup4",
         "fastmcp",
         "run",
-        "/path/real/server.py"
+        "/path/to/server.py"
       ],
       "env": {
         "GOOGLE_API_KEY": "your_google_api",
@@ -26,34 +34,58 @@
 }
 ```
 
-Here are some example prompts for test this MCP Server:
+## Tools
 
-1. **Research-Based Prompt:**
-   - "Find recent studies on the effects of remote work on employee productivity and summarize the key findings."
+### findIt_google
 
-2. **How-To Guide Prompt:**
-   - "Search for step-by-step guides on how to start a vegetable garden and create a comprehensive guide based on the best practices found."
+Performs a web search using Google Programmable Search Engine with enhanced parameters.
 
-3. **Comparison Prompt:**
-   - "Look for articles comparing electric cars and traditional gasoline cars, and generate a summary highlighting the pros and cons of each."
+**Parameters:**
+- `query*`: Search query string
+- `search_depth`: The depth of the search - 'basic' (faster) or 'advanced' (more comprehensive)
+- `time_range`: Limit results to a specific time frame ('day', 'week', 'month', 'year')
+- `max_results`: The maximum number of search results to return (1-10)
+- `include_domains`: List of domains to specifically include in the search results
+- `exclude_domains`: List of domains to specifically exclude from the search results
+- `include_raw_content`: Include the cleaned and parsed content from top results (limited to first 3 results)
 
-4. **Trend Analysis Prompt:**
-   - "Search for the latest trends in digital marketing for 2025 and create a report on the top five strategies businesses are using."
+### findIt_scrap
 
-5. **Travel Planning Prompt:**
-   - "Find the best travel destinations for solo travelers in 2025 and write a travel itinerary for a week-long trip."
+Extracts and processes content from specified URLs, supporting in-depth content analysis.
 
-6. **Product Review Prompt:**
-   - "Search for reviews of the latest smartphone models released this year and generate a comparison chart of their features and prices."
+**Parameters:**
+- `urls*`: List of URLs to extract content from
+- `extract_depth`: Depth of extraction - 'basic' or 'advanced'
+- `include_images`: Include a list of images extracted from the URLs in the response (limited to 10 per URL)
 
-7. **Historical Context Prompt:**
-   - "Look for information on the causes and effects of the Industrial Revolution and create a timeline of key events."
+## Example Prompts
 
-8. **Health and Wellness Prompt:**
-   - "Search for the benefits of mindfulness meditation and write an article outlining how to get started with mindfulness practices."
+1. **Research with Domain Filtering:**
+   - "Search for recent studies on climate change from .edu and .gov domains only and summarize the key findings."
 
-9. **Recipe Development Prompt:**
-   - "Find popular recipes for vegan desserts and create a new recipe that combines elements from the top three."
+2. **Content Extraction:**
+   - "Extract the full content from these three articles about artificial intelligence ethics and create a comparative analysis."
 
-10. **Event Coverage Prompt:**
-    - "Search for news articles covering the latest tech conference and summarize the major announcements and innovations presented."
+3. **Targeted Research with Time Constraints:**
+   - "Find news articles about renewable energy innovations from the past month and extract the most significant breakthroughs."
+
+4. **Competitive Analysis:**
+   - "Search for information about Tesla's latest electric vehicles and extract detailed specifications from their official website."
+
+5. **Academic Research:**
+   - "Find scientific papers on mRNA vaccines published in the last year, excluding results from news sites."
+
+6. **Technical Documentation:**
+   - "Extract the installation instructions from the official documentation pages for TensorFlow, PyTorch, and Keras."
+
+7. **Market Analysis:**
+   - "Search for recent financial reports about the semiconductor industry from the past week and extract key market trends."
+
+8. **Image Collection:**
+   - "Find websites about sustainable architecture and extract all relevant images with their descriptions."
+
+9. **Product Comparison:**
+   - "Search for detailed reviews of the latest MacBook Pro and extract specifications and performance benchmarks."
+
+10. **News Analysis:**
+    - "Find articles about the recent tech layoffs from major news sources published this month and extract the main facts."
