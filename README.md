@@ -1,6 +1,38 @@
-# Advanced Web Search MCP
+# FindIt - Advanced Web Search MCP
 
 A powerful web search and content extraction tool that provides comprehensive, real-time results using Google's search engine. Returns relevant web content with customizable parameters for result count, content type, time range, and domain filtering. Ideal for gathering current information, news, and detailed web content analysis.
+
+## Installation
+
+### Prerequisites
+
+- Python 3.8 or higher
+- `uv` package manager
+
+### Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/KSDeshappriya/findit-mcp.git
+   cd findit-mcp
+   ```
+
+2. Install dependencies using `uv`:
+   ```bash
+   uv pip install fastmcp httpx pydantic-settings python-dotenv beautifulsoup4
+   ```
+
+3. Set up Google API credentials:
+   - Create a [Google Programmable Search Engine](https://programmablesearchengine.google.com/)
+   - Obtain your Google API key from [Google Cloud Console](https://console.cloud.google.com/)
+   - Set the environment variables or update the configuration file with your credentials:
+     ```cmd
+     GOOGLE_API_KEY=your_google_api_key
+     GOOGLE_CSE_ID=your_custom_search_engine_id
+     ```
+
+4. Configure your MCP client to use FindIt as specified in the Configuration section.
+
 
 ## Configuration
 
@@ -89,3 +121,11 @@ Extracts and processes content from specified URLs, supporting in-depth content 
 
 10. **News Analysis:**
     - "Find articles about the recent tech layoffs from major news sources published this month and extract the main facts."
+
+##### **Bonus Prompt**
+   > "Large Concept Model (LCM) : A giant step towards AGI" generate report about that using web search and web scrap
+
+
+## License
+
+This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0) - see the [LICENSE](https://creativecommons.org/licenses/by-nc/4.0/) file for details.
