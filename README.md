@@ -23,12 +23,12 @@ A powerful web search and content extraction tool that provides comprehensive, r
    ```
 
 3. Set up Google API credentials:
-   - Create a [Google Programmable Search Engine](https://programmablesearchengine.google.com/)
-   - Obtain your Google API key from [Google Cloud Console](https://console.cloud.google.com/)
+   - Create a Custom Search Engine ID from [Google Programmable Search Engine](https://programmablesearchengine.google.com/)
+   - Follow the setup instructions at [Google Custom Search JSON API](https://developers.google.com/custom-search/v1/introduction)
    - Set the environment variables or update the configuration file with your credentials:
      ```cmd
-     GOOGLE_API_KEY=your_google_api_key
-     GOOGLE_CSE_ID=your_custom_search_engine_id
+     GOOGLE_API_KEY=your_google_api_key # https://developers.google.com/custom-search/v1/introduction
+     GOOGLE_CSE_ID=your_custom_search_engine_id # https://programmablesearchengine.google.com/
      ```
 
 4. Configure your MCP client to use FindIt as specified in the Configuration section.
