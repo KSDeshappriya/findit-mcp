@@ -1,5 +1,7 @@
 # FindIt - Advanced Web Search MCP
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/KSDeshappriya/findit-mcp)
+
 A powerful web search and content extraction tool that provides comprehensive, real-time results using Google's search engine. Returns relevant web content with customizable parameters for result count, content type, time range, and domain filtering. Ideal for gathering current information, news, and detailed web content analysis.
 
 ## Installation
